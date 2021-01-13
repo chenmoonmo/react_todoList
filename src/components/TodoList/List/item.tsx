@@ -19,7 +19,7 @@ const TdItem: FC<IProps> = ({ todo, toggleTodo, removeTodo }): ReactElement => {
       <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>
         {content}
       </span>
-      <button onClick={() => removeTodo(id)}></button>
+      <button onClick={() => removeTodo(id)}>删除</button>
     </div>
   )
 }

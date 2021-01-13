@@ -15,7 +15,7 @@ const TdInput: FC<Iprops> = ({ addTodo, todoList }): ReactElement => {
   const addItem = (): void => {
     const val: string = inputRef.current!.value.trim()
     if (val.length) {
-      const isExist = todoList.find((todo: ITodo) => todo.content == val)
+      const isExist = todoList.find((todo: ITodo) => todo.content === val)
       if (isExist) {
         alert('已存在该项')
         return
@@ -32,7 +32,7 @@ const TdInput: FC<Iprops> = ({ addTodo, todoList }): ReactElement => {
 
   return (
     <div className="todo_input">
-      <input type="text" placeholder="请输入代办项" ref={inputRef} />
+      <input type="text" placeholder="请输入待办项" ref={inputRef} />
       <button onClick={addItem}>增加</button>
     </div>
   )

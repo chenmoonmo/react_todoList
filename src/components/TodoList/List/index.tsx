@@ -22,6 +22,7 @@ const TdList: FC<IProps> = ({
               todo={todo}
               removeTodo={removeTodo}
               toggleTodo={toggleTodo}
+              key={todo.id}
             />
           )
         })}
