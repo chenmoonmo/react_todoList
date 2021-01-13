@@ -1,11 +1,17 @@
-import React, { useCallback, useEffect, useReducer } from 'react'
+import React, {
+  FC,
+  ReactElement,
+  useCallback,
+  useEffect,
+  useReducer,
+} from 'react'
 import { ACTION_TYPE, IState, ITodo } from './typings'
 import { todoReducer } from './reducer'
 
 import TdInput from './Input'
 import TdList from './List'
 
-const TodoList = () => {
+const TodoList: FC = (): ReactElement => {
   const initialState: IState = {
     todoList: [],
   }
