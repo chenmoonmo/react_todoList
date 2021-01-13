@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.anima {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(151, 231, 255);
+}

@@ -37,13 +37,14 @@ const TodoList: FC = (): ReactElement => {
   }, [])
 
   return (
-    <div className="todo_list">
+    <div className="todo_list animate-pulse">
       <TdInput addTodo={addTodo} todoList={state.todoList} />
       <TdList
         todoList={state.todoList}
         removeTodo={removeTodo}
         toggleTodo={toggleTodo}
       />
+      <div className=" anima  animate-bounce "></div>
     </div>
   )
 }

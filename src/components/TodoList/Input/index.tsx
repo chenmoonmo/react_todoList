@@ -32,8 +32,18 @@ const TdInput: FC<Iprops> = ({ addTodo, todoList }): ReactElement => {
 
   return (
     <div className="todo_input">
-      <input type="text" placeholder="请输入待办项" ref={inputRef} />
-      <button onClick={addItem}>增加</button>
+      <input
+        className="rounded-md border border-pink-300 text-m outline-none select-none"
+        type="text"
+        placeholder="请输入待办项"
+        ref={inputRef}
+      />
+      <button
+        className="border-none  bg-green-500 text-white rounded-lg shadow-md px-3 py-1 text-xs ml-8 ring ring-green-100 outline-none animate-ping"
+        onClick={addItem}
+      >
+        增加
+      </button>
     </div>
   )
 }
