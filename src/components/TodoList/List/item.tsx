@@ -10,13 +10,17 @@ interface IProps {
 const TdItem: FC<IProps> = ({ todo, toggleTodo, removeTodo }): ReactElement => {
   const { id, content, completed } = todo
   return (
-    <div className="todo_item">
+    <div className="w-full flex items-center mt-1">
       <input
+        className="mr-1"
         type="checkbox"
         checked={completed}
         onChange={() => toggleTodo(id)}
       />
-      <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+      <span
+        className="flex-grow"
+        style={{ textDecoration: completed ? 'line-through' : 'none' }}
+      >
         {content}
       </span>
       <button

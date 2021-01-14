@@ -14,7 +14,7 @@ const TdList: FC<IProps> = ({
   toggleTodo,
 }): ReactElement => {
   return (
-    <div className="todo_List">
+    <div className="w-60 mt-5">
       {todoList &&
         todoList.map((todo: ITodo) => {
           return (

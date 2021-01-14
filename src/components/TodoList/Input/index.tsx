@@ -39,7 +39,7 @@ const TdInput: FC<Iprops> = ({ addTodo, todoList }): ReactElement => {
         ref={inputRef}
       />
       <button
-        className="border-none  bg-green-500 text-white rounded-lg shadow-md px-3 py-1 text-xs ml-8 ring ring-green-100 outline-none animate-ping"
+        className="border-none  bg-green-500 text-white rounded-lg shadow-md px-3 py-1 text-xs ml-8 focus:ring ring-green-100 focus:outline-none"
         onClick={addItem}
       >
         增加
