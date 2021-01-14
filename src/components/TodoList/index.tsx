@@ -7,20 +7,32 @@ import React, {
 } from 'react'
 import { ACTION_TYPE, IState, ITodo } from './typings'
 import { todoReducer } from './reducer'
-
 import TdInput from './Input'
 import TdList from './List'
 
-const TodoList: FC = (): ReactElement => {
-  const initialState: IState = {
-    todoList: [],
-  }
+// const initialState: IState = {
+//   todoList: [],
+// }
 
+function init(initTodoList: ITodo[]): IState {
+  return {
+    todoList: initTodoList,
+  }
+}
+
+const TodoList: FC = (): ReactElement => {
   // const [todoList, setTodoList] = useState<ITodo[]>([])
-  const [state, dispatch] = useReducer(todoReducer, initialState)
+  // useReducer 参数将作为 init 参数函数的参数  init函数的返回值为state的初始化结果
+  // init函数在useReducer 调用时 执行
+  const [state, dispatch] = useReducer(todoReducer, [], init)
 
   useEffect(() => {
-    console.log(state.todoList)
+    const List = JSON.parse(localStorage.getItem('todolist') as string) || []
+    dispatch({ type: ACTION_TYPE.INIT_TODO, payload: List })
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('todolist', JSON.stringify(state.todoList))
   }, [state.todoList])
 
   const addTodo = useCallback((todo: ITodo) => {

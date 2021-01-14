@@ -31,6 +31,11 @@ function todoReducer(state: IState, action: IAction): IState {
             : { ...todo }
         }),
       }
+    case ACTION_TYPE.INIT_TODO:
+      return {
+        ...state,
+        todoList: payload as ITodo[],
+      }
     default:
       return state
   }

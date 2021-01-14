@@ -25,7 +25,6 @@ const TdInput: FC<Iprops> = ({ addTodo, todoList }): ReactElement => {
         content: val,
         completed: false,
       })
-
       inputRef.current!.value = ''
     }
   }
@@ -33,7 +32,7 @@ const TdInput: FC<Iprops> = ({ addTodo, todoList }): ReactElement => {
   return (
     <div className="todo_input">
       <input
-        className="rounded-md border border-pink-300 text-m outline-none select-none"
+        className="rounded-md border border-pink-300 text-m outline-none select-none pl-3 box-content"
         type="text"
         placeholder="请输入待办项"
         ref={inputRef}
